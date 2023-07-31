@@ -1,1 +1,9 @@
-/*# sourceMappingURL=mystyle.css.map */
+body {
+  margin: 0;
+  background-color: #182f41;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: cursive, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}/*# sourceMappingURL=mystyle.css.map */
