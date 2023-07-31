@@ -14,4 +14,28 @@ header {
   justify-content: center;
   background-color: #f19372;
   color: #182f41;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem;
+}
+.buttons > button {
+  margin: 1rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  font-weight: 900;
+  font-size: 1.5rem;
+  background-color: #f19372;
+  color: #182f41;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.buttons > button:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
 }/*# sourceMappingURL=mystyle.css.map */
