@@ -6,4 +6,12 @@ body {
 * {
   box-sizing: border-box;
   font-family: cursive, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f19372;
+  color: #182f41;
 }/*# sourceMappingURL=mystyle.css.map */

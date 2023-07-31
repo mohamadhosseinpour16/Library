@@ -1,0 +1,11 @@
+// variable
+$bg-header : #f19372;
+$color-header: #182f41;
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg-header;
+    color: $color-header;
+}
