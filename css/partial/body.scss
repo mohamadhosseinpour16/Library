@@ -1,0 +1,12 @@
+// variable
+$bg-body: #182f41;
+
+body {
+    margin: 0;
+    background-color: $bg-body;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: cursive , 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
