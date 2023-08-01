@@ -1,6 +1,9 @@
+// Select Dom Node
 let root = document.getElementById("root");
+let buttons = document.querySelectorAll(".buttons > button");
 
-// function
+
+// Function
 const render = (librarys) => {
   root.innerHTML = "";
   for (const library of librarys) {
@@ -18,7 +21,25 @@ const render = (librarys) => {
   }
 };
 
-// event
+// Filter Genre
+function FilterGenre(genre){
+  let filterBook = librarys.filter((item) => item.genre === genre);
+  render(filterBook)
+  setTimeout( () =>{
+      render(librarys)
+  },10000)
+};
+
+
+
+// Event
 window.addEventListener("load", () => {
   render(librarys);
 });
+
+for (const btn of buttons) {
+  btn.addEventListener("click" , function() {
+      FilterGenre(this.textContent)
+  });
+  
+};
