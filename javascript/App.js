@@ -3,7 +3,6 @@ let root = document.getElementById("root");
 let buttons = document.querySelectorAll(".buttons > button");
 let AllBook = document.getElementById("AllBook");
 
-
 // Function
 const render = (librarys) => {
   root.innerHTML = "";
@@ -23,17 +22,15 @@ const render = (librarys) => {
 };
 
 // Filter Genre
-function FilterGenre(genre){
+function FilterGenre(genre) {
   let filterBook = librarys.filter((item) => item.genre === genre);
   render(filterBook);
   AllBook.style.display = "inline";
-};
-
-function allBook(){
-  render(librarys)
 }
 
-
+function allBook() {
+  render(librarys);
+}
 
 // Event
 window.addEventListener("load", () => {
@@ -41,8 +38,8 @@ window.addEventListener("load", () => {
 });
 
 for (const btn of buttons) {
-  btn.addEventListener("click" , function() {
-      FilterGenre(this.textContent)
+  btn.addEventListener("click", function () {
+    FilterGenre(this.textContent);
   });
-};
-AllBook.addEventListener("click", allBook)
+}
+AllBook.addEventListener("click", allBook);
