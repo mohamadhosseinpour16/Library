@@ -26,10 +26,11 @@ const render = (librarys) => {
 function FilterGenre(genre){
   let filterBook = librarys.filter((item) => item.genre === genre);
   render(filterBook);
+  AllBook.style.display = "inline";
 };
 
 function allBook(){
-  
+  render(librarys)
 }
 
 

@@ -105,7 +105,7 @@ header {
   padding: 0.5rem;
   transition: 0.5s;
 }
-.icon > i:hover {
-  transform: scale(1.1);
-  transition: 0.5s;
+
+#AllBook {
+  display: none;
 }/*# sourceMappingURL=mystyle.css.map */
