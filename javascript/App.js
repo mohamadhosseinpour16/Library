@@ -24,10 +24,7 @@ const render = (librarys) => {
 // Filter Genre
 function FilterGenre(genre){
   let filterBook = librarys.filter((item) => item.genre === genre);
-  render(filterBook)
-  setTimeout( () =>{
-      render(librarys)
-  },10000)
+  render(filterBook);
 };
 
 
@@ -41,5 +38,4 @@ for (const btn of buttons) {
   btn.addEventListener("click" , function() {
       FilterGenre(this.textContent)
   });
-  
 };
