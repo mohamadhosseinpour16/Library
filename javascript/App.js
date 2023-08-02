@@ -30,6 +30,7 @@ function FilterGenre(genre) {
 
 function allBook() {
   render(librarys);
+  AllBook.style.display = "none";
 }
 
 // Event

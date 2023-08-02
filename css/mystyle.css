@@ -108,4 +108,8 @@ header {
 
 #AllBook {
   display: none;
+}
+
+.head h1 {
+  font-size: 2.3rem;
 }/*# sourceMappingURL=mystyle.css.map */
