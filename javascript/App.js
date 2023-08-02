@@ -1,6 +1,7 @@
 // Select Dom Node
 let root = document.getElementById("root");
 let buttons = document.querySelectorAll(".buttons > button");
+let AllBook = document.getElementById("AllBook");
 
 
 // Function
@@ -27,6 +28,10 @@ function FilterGenre(genre){
   render(filterBook);
 };
 
+function allBook(){
+  
+}
+
 
 
 // Event
@@ -39,3 +44,4 @@ for (const btn of buttons) {
       FilterGenre(this.textContent)
   });
 };
+AllBook.addEventListener("click", allBook)

@@ -9,6 +9,7 @@ body {
 }
 
 header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -92,4 +93,19 @@ header {
   font-size: 1.3rem;
   margin: 1rem 0;
   cursor: pointer;
+}
+
+.icon {
+  position: absolute;
+  top: 30%;
+  right: 10%;
+}
+.icon > i {
+  font-size: 2.3rem;
+  padding: 0.5rem;
+  transition: 0.5s;
+}
+.icon > i:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
 }/*# sourceMappingURL=mystyle.css.map */
