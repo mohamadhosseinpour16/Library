@@ -104,6 +104,24 @@ header {
   font-size: 2.3rem;
   padding: 0.5rem;
   transition: 0.5s;
+  cursor: pointer;
+}
+
+#basket > span {
+  font-size: 1.2rem;
+  font-weight: 400;
+  background-color: #182f41;
+  color: #fff;
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  top: -19%;
+  left: -26%;
 }
 
 #AllBook {

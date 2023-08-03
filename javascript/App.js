@@ -2,6 +2,7 @@
 let root = document.getElementById("root");
 let buttons = document.querySelectorAll(".buttons > button");
 let AllBook = document.getElementById("AllBook");
+let spanValue = document.getElementById("value");
 
 // Function
 const render = (librarys) => {
@@ -26,11 +27,18 @@ function FilterGenre(genre) {
   let filterBook = librarys.filter((item) => item.genre === genre);
   render(filterBook);
   AllBook.style.display = "inline";
+  spanValue.style.position = "absolute";
+  spanValue.style.top = "-16%";
+  spanValue.style.left = "-18%";
 }
 
 function allBook() {
   render(librarys);
   AllBook.style.display = "none";
+  spanValue.style.position = "absolute";
+  spanValue.style.top = "-19%";
+  spanValue.style.left = "-26%";
+  
 }
 
 // Event
