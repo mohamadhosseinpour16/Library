@@ -3,6 +3,7 @@ let root = document.getElementById("root");
 let buttons = document.querySelectorAll(".buttons > button");
 let AllBook = document.getElementById("AllBook");
 let spanValue = document.getElementById("value");
+const Basket = [];
 
 // Function
 const render = (librarys) => {
@@ -15,15 +16,19 @@ const render = (librarys) => {
                      <h2>نویسنده: ${library.author}</h2>
                      <h3>سال انتشار: ${library.published_date}</h3>
                      <h3>ژانر: ${library.genre}</h3>
-                    <button onclick="addToCard(${library.id})">اضافه به سبد خرید </button>
+                    ${
+                      Basket.find((phrchase) => phrchase.id === library.id)
+                        ? `<button class="isBasket">موجود در سبد خرید</button>`
+                        : `<button onclick="addToCard(${library.id})">اضافه به سبد خرید </button>`
+                    }   
                 </div>
       `;
     root.innerHTML += template;
   }
 };
 
-// Filter Genre
-function FilterGenre(genre) {
+// function filter Genre
+function filterGenre(genre) {
   let filterBook = librarys.filter((item) => item.genre === genre);
   render(filterBook);
   AllBook.style.display = "inline";
@@ -31,15 +36,33 @@ function FilterGenre(genre) {
   spanValue.style.top = "-16%";
   spanValue.style.left = "-18%";
 }
+// End
 
+// function allBook
 function allBook() {
   render(librarys);
   AllBook.style.display = "none";
   spanValue.style.position = "absolute";
   spanValue.style.top = "-19%";
   spanValue.style.left = "-26%";
-  
 }
+// End
+
+// function addToCard
+const addToCard = (id) => {
+  let selectedBooks = librarys.find((library) => library.id === id);
+  Basket.push(selectedBooks);
+  AllBook.style.display = "none";
+  UpdateSpanValue();
+  render(librarys);
+};
+// End
+
+// function UpdateSpanValue
+const UpdateSpanValue = () => {
+  spanValue.textContent = Basket.length;
+};
+// End
 
 // Event
 window.addEventListener("load", () => {
@@ -48,7 +71,8 @@ window.addEventListener("load", () => {
 
 for (const btn of buttons) {
   btn.addEventListener("click", function () {
-    FilterGenre(this.textContent);
+    filterGenre(this.textContent);
   });
 }
+
 AllBook.addEventListener("click", allBook);
