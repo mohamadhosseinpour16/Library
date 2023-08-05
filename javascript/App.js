@@ -1,11 +1,13 @@
 // Select Dom Node
 let root = document.getElementById("root");
 let buttons = document.querySelectorAll(".buttons > button");
-let AllBook = document.getElementById("AllBook");
 let spanValue = document.getElementById("value");
+let allBookIcon = document.getElementById("AllBook");
+let basketIcon = document.getElementById("basket");
 const Basket = [];
 
 // Function
+// function render
 const render = (librarys) => {
   root.innerHTML = "";
   for (const library of librarys) {
@@ -25,6 +27,10 @@ const render = (librarys) => {
       `;
     root.innerHTML += template;
   }
+  // css
+  for (const btn of buttons) {
+    btn.style.display = "inline";
+  }
 };
 
 // function filter Genre
@@ -32,7 +38,7 @@ function filterGenre(genre) {
   let filterBook = librarys.filter((item) => item.genre === genre);
   render(filterBook);
   // css inline
-  AllBook.style.display = "inline";
+  allBookIcon.style.display = "inline";
   spanValue.style.position = "absolute";
   spanValue.style.top = "-20%";
   spanValue.style.left = "-14%";
@@ -43,7 +49,7 @@ function filterGenre(genre) {
 function allBook() {
   render(librarys);
   // css inline
-  AllBook.style.display = "none";
+  allBookIcon.style.display = "none";
   spanValue.style.position = "absolute";
   spanValue.style.top = "-19%";
   spanValue.style.left = "-26%";
@@ -57,7 +63,7 @@ const addToCard = (id) => {
   UpdateSpanValue();
   render(librarys);
   // css inline
-  AllBook.style.display = "none";
+  allBookIcon.style.display = "none";
   spanValue.style.position = "absolute";
   spanValue.style.top = "-19%";
   spanValue.style.left = "-26%";
@@ -70,6 +76,34 @@ const UpdateSpanValue = () => {
 };
 // End
 
+// function renderBasket
+const renderBasket = () => {
+  root.innerHTML = "";
+  for (const library of Basket) {
+    let template = `
+                <div class="card">
+                     <img src="${library.imgSrc}" alt="${library.title}">
+                     <h2> نام کتاب: ${library.title}</h2>
+                     <h2>نویسنده: ${library.author}</h2>
+                     <h3>سال انتشار: ${library.published_date}</h3>
+                     <h3>ژانر: ${library.genre}</h3>
+                     <button onclick="removeBasket(${library.id}">حذف از سبد خرید</button>
+                </div>
+      `;
+    root.innerHTML += template;
+  }
+  // css
+  for (const btn of buttons) {
+    btn.style.display = "none";
+  }
+  allBookIcon.style.display = "inline";
+  spanValue.style.position = "absolute";
+  spanValue.style.top = "-20%";
+  spanValue.style.left = "-14%";
+};
+
+// End
+
 // Event
 window.addEventListener("load", () => {
   render(librarys);
@@ -80,5 +114,5 @@ for (const btn of buttons) {
     filterGenre(this.textContent);
   });
 }
-
-AllBook.addEventListener("click", allBook);
+allBookIcon.addEventListener("click", allBook);
+basketIcon.addEventListener("click", renderBasket);

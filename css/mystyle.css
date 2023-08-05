@@ -17,6 +17,10 @@ header {
   color: #182f41;
 }
 
+.head h1 {
+  font-size: 2.3rem;
+}
+
 .buttons {
   display: flex;
   align-items: center;
@@ -128,8 +132,18 @@ header {
   display: none;
 }
 
-.head h1 {
-  font-size: 2.3rem;
+#value {
+  font-size: 1.2rem;
+  font-weight: 400;
+  background-color: #182f41;
+  color: #fff;
+  display: inline-flex;
+  width: 24px;
+  height: 24px;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
 }
 
 .isBasket {

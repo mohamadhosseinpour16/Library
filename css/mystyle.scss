@@ -1,9 +1,10 @@
 @use './partial/body';
 @use './partial/header';
+@use './partial/head';
 @use './partial/buttons';
 @use './partial/root';
 @use './partial/card';
 @use './partial/icon';
 @use './partial/AllBook';
-@use './partial/head';
+@use'./partial/value';
 @use './partial/isBasket';

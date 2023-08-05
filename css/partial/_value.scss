@@ -1,0 +1,17 @@
+// variable
+$color-button: #182f41;
+$color-span: #fff;
+
+#value{
+    font-size: 1.2rem;
+    font-weight: 400;
+    background-color: $color-button;
+    color: $color-span;
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
