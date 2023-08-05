@@ -31,16 +31,18 @@ const render = (librarys) => {
 function filterGenre(genre) {
   let filterBook = librarys.filter((item) => item.genre === genre);
   render(filterBook);
+  // css inline
   AllBook.style.display = "inline";
   spanValue.style.position = "absolute";
-  spanValue.style.top = "-16%";
-  spanValue.style.left = "-18%";
+  spanValue.style.top = "-20%";
+  spanValue.style.left = "-14%";
 }
 // End
 
 // function allBook
 function allBook() {
   render(librarys);
+  // css inline
   AllBook.style.display = "none";
   spanValue.style.position = "absolute";
   spanValue.style.top = "-19%";
@@ -52,9 +54,13 @@ function allBook() {
 const addToCard = (id) => {
   let selectedBooks = librarys.find((library) => library.id === id);
   Basket.push(selectedBooks);
-  AllBook.style.display = "none";
   UpdateSpanValue();
   render(librarys);
+  // css inline
+  AllBook.style.display = "none";
+  spanValue.style.position = "absolute";
+  spanValue.style.top = "-19%";
+  spanValue.style.left = "-26%";
 };
 // End
 
