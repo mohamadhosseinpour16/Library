@@ -87,7 +87,7 @@ const renderBasket = () => {
                      <h2>نویسنده: ${library.author}</h2>
                      <h3>سال انتشار: ${library.published_date}</h3>
                      <h3>ژانر: ${library.genre}</h3>
-                     <button onclick="removeBasket(${library.id}">حذف از سبد خرید</button>
+                     <button onclick="removeBasket(${library.id})">حذف از سبد خرید</button>
                 </div>
       `;
     root.innerHTML += template;
@@ -102,6 +102,15 @@ const renderBasket = () => {
   spanValue.style.left = "-14%";
 };
 
+// End
+
+// function removeBasket
+const removeBasket = (id) => {
+  let index = librarys.find((library) => library.id === id);
+  Basket.splice(index , 1);
+  UpdateSpanValue();
+  renderBasket();
+}
 // End
 
 // Event
