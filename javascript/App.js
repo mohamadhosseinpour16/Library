@@ -4,6 +4,7 @@ let buttons = document.querySelectorAll(".buttons > button");
 let spanValue = document.getElementById("value");
 let allBookIcon = document.getElementById("AllBook");
 let basketIcon = document.getElementById("basket");
+let h1 = document.getElementById("h1");
 const Basket = [];
 
 // Function
@@ -19,7 +20,7 @@ const render = (librarys) => {
                      <h3>سال انتشار: ${library.published_date}</h3>
                      <h3>ژانر: ${library.genre}</h3>
                     ${
-                      Basket.find((phrchase) => phrchase.id === library.id)
+                      (Basket.find(phrchase => phrchase.id === library.id))
                         ? `<button class="isBasket">موجود در سبد خرید</button>`
                         : `<button onclick="addToCard(${library.id})">اضافه به سبد خرید </button>`
                     }   
@@ -31,6 +32,7 @@ const render = (librarys) => {
   for (const btn of buttons) {
     btn.style.display = "inline";
   }
+ 
 };
 
 // function filter Genre
@@ -53,6 +55,7 @@ function allBook() {
   spanValue.style.position = "absolute";
   spanValue.style.top = "-19%";
   spanValue.style.left = "-26%";
+  h1.textContent = 'Library'
 }
 // End
 
@@ -100,6 +103,7 @@ const renderBasket = () => {
   spanValue.style.position = "absolute";
   spanValue.style.top = "-20%";
   spanValue.style.left = "-14%";
+  h1.textContent = 'Basket'
 };
 
 // End
@@ -107,10 +111,10 @@ const renderBasket = () => {
 // function removeBasket
 const removeBasket = (id) => {
   let index = librarys.find((library) => library.id === id);
-  Basket.splice(index , 1);
+  Basket.splice(index, 1);
   UpdateSpanValue();
   renderBasket();
-}
+};
 // End
 
 // Event
