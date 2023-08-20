@@ -1,7 +1,6 @@
 const librarys = [
     {
       id: 1,
-  
       title: "خواجه تاجدار",
       author: "ژان گور",
       published_date: "۱۳۸۶",

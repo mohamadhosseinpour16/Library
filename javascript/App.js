@@ -7,7 +7,7 @@ let basketIcon = document.getElementById("basket");
 let h1 = document.getElementById("h1");
 const Basket = [];
 
-// Function
+// Functions
 // function render
 const render = (librarys) => {
   root.innerHTML = "";
@@ -20,7 +20,7 @@ const render = (librarys) => {
                      <h3>سال انتشار: ${library.published_date}</h3>
                      <h3>ژانر: ${library.genre}</h3>
                     ${
-                      (Basket.find(phrchase => phrchase.id === library.id))
+                      Basket.find((phrchase) => phrchase.id === library.id)
                         ? `<button class="isBasket">موجود در سبد خرید</button>`
                         : `<button onclick="addToCard(${library.id})">اضافه به سبد خرید </button>`
                     }   
@@ -32,7 +32,6 @@ const render = (librarys) => {
   for (const btn of buttons) {
     btn.style.display = "inline";
   }
- 
 };
 
 // function filter Genre
@@ -41,9 +40,7 @@ function filterGenre(genre) {
   render(filterBook);
   // css inline
   allBookIcon.style.display = "inline";
-  spanValue.style.position = "absolute";
-  spanValue.style.top = "-20%";
-  spanValue.style.left = "-14%";
+  position2();
 }
 // End
 
@@ -51,11 +48,8 @@ function filterGenre(genre) {
 function allBook() {
   render(librarys);
   // css inline
-  allBookIcon.style.display = "none";
-  spanValue.style.position = "absolute";
-  spanValue.style.top = "-19%";
-  spanValue.style.left = "-26%";
-  h1.textContent = 'Library'
+  position1();
+  h1.textContent = "Library";
 }
 // End
 
@@ -66,10 +60,7 @@ const addToCard = (id) => {
   UpdateSpanValue();
   render(librarys);
   // css inline
-  allBookIcon.style.display = "none";
-  spanValue.style.position = "absolute";
-  spanValue.style.top = "-19%";
-  spanValue.style.left = "-26%";
+  position1();
 };
 // End
 
@@ -99,11 +90,9 @@ const renderBasket = () => {
   for (const btn of buttons) {
     btn.style.display = "none";
   }
+  position2();
   allBookIcon.style.display = "inline";
-  spanValue.style.position = "absolute";
-  spanValue.style.top = "-20%";
-  spanValue.style.left = "-14%";
-  h1.textContent = 'Basket'
+  h1.textContent = "Basket";
 };
 
 // End
@@ -116,6 +105,21 @@ const removeBasket = (id) => {
   renderBasket();
 };
 // End
+
+// function position
+const position1 = () => {
+  allBookIcon.style.display = "none";
+  spanValue.style.position = "absolute";
+  spanValue.style.top = "-19%";
+  spanValue.style.left = "-26%";
+};
+const position2 = () => {
+  spanValue.style.position = "absolute";
+  spanValue.style.top = "-20%";
+  spanValue.style.left = "-14%";
+};
+// End
+// End functions
 
 // Event
 window.addEventListener("load", () => {
